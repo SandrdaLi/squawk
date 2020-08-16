@@ -1,0 +1,3 @@
+com/squawk/notification/NotificationApplication.class
+com/squawk/notification/service/Consumer.class
+com/squawk/notification/exception/ResourceNotFoundException.class

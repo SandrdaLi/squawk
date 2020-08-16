@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    restart: always
+    ports:
+      - 2181:2181
+
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    restart: always
+    ports:
+      - 9092:9092
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper:zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+  mysql:
+    depends_on:
+      - kafka
+    image: 'mysql:latest'
+    container_name: mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3306:3306'
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init.sql:/data/application/init.sql
+
+  squawk-producer:
+    depends_on:
+      - mysql
+    image: 'squawk-producer'
+    container_name: squawk-producer
+    ports:
+      - '8080:8080'
+
+  squawk-consumer:
+    image: 'squawk-consumer'
+    container_name: squawk-consumer
+    ports:
+      - '8090:8090'
+
+volumes:
+  zookeeper_data:
+    driver: local
+  kafka_data:
+    driver: local
