@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfd77a35-bcd3-4b74-bd9a-4f5557808d06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/squawk-producer/src/main/resources/AwsCredentials.properties" beforeDir="false" afterPath="$PROJECT_DIR$/squawk-producer/src/main/resources/AwsCredentials.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
