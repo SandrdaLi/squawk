@@ -1,6 +1,6 @@
 # Squawk
 
-A REST API to send emails to clients. Utilizes AWS SES and can send 10,000 free emails in a day.
+A Spring-Boot application to send emails to clients. Utilizes AWS SES and can send 10,000 free emails in a day. The application is made up of 2 microservices, a Kafka server and a MySQL server which are all containerized using Docker.
 
 Pre-requisites
 1) AWS account
