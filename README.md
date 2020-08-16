@@ -6,12 +6,12 @@ Pre-requisites
 1) AWS account
 2) Docker
 
-Clone this repository <br/>
+### Clone this repository <br/>
 
 Create your own AWS account and save the access key and secret access key you get during IAM role creation. Enter the keys in the AwsCredentials.properties file at squawk-consumer/src/main/resources/. Go to Simple Email Service (SES) on the dashboard and authorize an email address to send and receive emails. Replace "sreekar.dhaduvai2@gmail.com" with your authorized email in /squawk-consumer/src/main/java/com/squawk/notification/service/Consumer.java
 
 
-Run 
+### Run 
 
 ```
 docker-compose up
